@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const arr = [1, 5, 10, "olá", true]
+
+        let sohNumeros = arr.some( function(el) {
+            // console.log(el)
+            return typeof el === "number"
+        })
+        let arr1 =arr.filter(function(el, i, _arr){
+            return typeof el === "number"
+        })
+
+        arr1 = arr1.map(function(el, i, _arr) {
+            return el * el
+        })
+
+        arr.forEach(function(el, i, _arr){
+           console.log(el, i)
+        })
+        console.log(arr)
+        console.log(arr1)
+    </script>
+</body>
+</html>

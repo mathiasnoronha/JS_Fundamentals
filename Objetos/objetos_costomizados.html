@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function changeName(name) {
+            console.log(name)
+            console.log(this)
+            this.name = name
+            this.updateAt = new Date()
+        }
+        // const changeName = name => {
+        //     console.log(name)
+        //     console.log(this)
+        // }
+
+        const task1 = {
+            nome: "task ",
+            createdAt: new Date(),
+            updateAt: null,
+            completed: false,
+            changeName
+        }
+
+        const task2 = {
+            nome: "task ",
+            createdAt: new Date(),
+            updateAt: null,
+            completed: false,
+            changeName
+        }
+
+
+        task1.nome = "task 1 update"
+        task1.updateAt = new Date()
+
+        task1.changeName("nome atualizado")
+
+        task2.changeName("novo nome")
+
+        // console.log(task1)
+        console.log(task2)
+
+    </script>
+</body>
+
+</html>

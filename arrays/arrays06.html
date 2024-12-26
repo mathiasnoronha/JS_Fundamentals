@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let arr = [1,2,3]
+        console.log(arr.reverse())
+
+        const soma = arr.reduce( function(acumulador, atual){
+            return acumulador + atual
+        } )
+
+        console.log(soma)
+        console.log(arr)
+
+        const nomes = ["Mathias", "João", "Thanos", "Peter"]
+        let nomesPorOrdem = nomes.reduce( function(nomes, nomesAtual){
+
+            // nomes = {}
+            // nomeAtual = "Mathias" -> nomeAtual[0] = "M"
+            // return {M: 1}
+
+            // 2- 
+            // nomes = {M: 1}
+            // nomeAtual = "João" -> primeiraLetra = "J"
+            // return {M: 1. J: 1}
+
+            // E assim sucessivamente...
+
+            let primeiroLetra = nomesAtual[0]
+            if(nomes[primeiroLetra]) {
+                nomes[primeiroLetra]++
+            } else {
+                nomes[primeiroLetra] = 1
+            }
+            return nomes
+        }, {})
+        // objeto vazio
+
+        console.log(nomesPorOrdem)
+
+        // nomes.M
+        //   nomes.M++ se não... nomes.M = 1
+
+    </script>
+</body>
+</html>
